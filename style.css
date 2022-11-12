@@ -1,0 +1,182 @@
+:root {
+  font-size: 62.5%;
+  --fs-body: 1.7rem; /*2.0rem estava grande demais*/
+  --fs-header: 4rem;
+
+  --ff-pala: "Palanquin", sans-serif;
+  --ff-staat: "Staatliches", cursive;
+
+  --fc-primary: #ffffff;
+  --fc-secondary: #23053a;
+  --fc-terciary: #4a4e69;
+
+  --hue: 218;
+  --bgc-primary: hsl(var(--hue), 17%, 62%);
+  --bgc-secondary: #cbc0d3;
+  --bgc-terciary: hsl(var(--hue), 0%, 100%);
+  --bg-span: #feeafa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  max-width: 38.4rem;
+  margin: 0 auto;
+}
+
+body {
+  background-color: var(--bgc-terciary);
+}
+
+header {
+  height: 24.5rem;
+  text-align: center;
+  background-color: hsl(var(--hue), 17%, 62%);
+  font-family: var(--ff-staat);
+}
+
+header img {
+  max-width: 14rem;
+  padding-top: 3.2rem;
+
+  animation: spin 2s;
+  transition: transform 400ms;
+}
+
+header h1 {
+  font-family: var(--ff-staat);
+  font-size: var(--fs-header);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 3.4rem;
+  letter-spacing: 0, 05em;
+
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  color: var(--fc-primary);
+  background-color: var(--bgc-secondary);
+
+  box-shadow: 0px 4px 4px #b1338e9a, 0px -4px 4px #b1338e9a;
+
+  padding: 0.8rem 0;
+  margin-top: 3.2rem;
+}
+
+main {
+  padding: 1.4rem 3.2rem 6.2rem;
+}
+
+main p {
+  font-family: var(--ff-pala);
+  font-weight: 400;
+  font-size: var(--fs-body);
+  line-height: 1.8rem;
+  color: var(--fc-secondary);
+  text-align: center;
+
+  margin-bottom: 5.6rem;
+}
+
+main section {
+  display: grid;
+  gap: 3.2rem;
+  justify-content: center;
+
+  padding: 0;
+}
+
+main section img {
+  width: 100%;
+  height: 100%;
+
+  min-height: 25rem;
+
+  object-fit: cover;
+  border-radius: 2rem;
+
+  animation: rideUp 1.2s;
+  transition: transform 400ms;
+  animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+section .cardTypea {
+  position: relative;
+  max-width: 32rem;
+  max-height: 25rem;
+}
+
+section .cardTypeb {
+  position: relative;
+  max-width: 32rem;
+  height: 45rem;
+}
+
+section h2 span {
+  font-family: var(--ff-staat);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #4a4e69;
+
+  background: var(--bg-span);
+  border-radius: 2rem;
+  padding: 0 2.3rem;
+
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  animation: drop 1.2s;
+}
+
+header img:hover {
+  transform: scale(1.3);
+  opacity: 0.9;
+}
+
+section img:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 3px 9px 3px #b1338e9a;
+  opacity: 0.9;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0rem);
+    opacity: 0.3;
+  }
+  100% {
+    transform: rotate(1080deg);
+    opacity: 1;
+  }
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(-60px);
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rideUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
